@@ -1,0 +1,16 @@
+.text-input {
+  color: $darkshade75;
+  padding: 1.3rem 1.5rem;
+  border: 1px solid $darkshade25;
+  border-radius: 4px;
+  outline: none;
+  max-width: 320px;
+  &::placeholder {
+    color: $darkshade25;
+  }
+  &:focus,
+  &:active,
+  &:hover {
+    border: 1px solid $darkshade50;
+  }
+}
