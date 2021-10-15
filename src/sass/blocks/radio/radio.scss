@@ -1,0 +1,35 @@
+.radio{
+  cursor: pointer;
+  display: inline-block;
+  max-width: 222px;
+  padding-left: 30px;
+  position: relative;
+  input {
+    display: none;
+  }
+  input:checked + .radio__item:before {
+    display: inline-block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $purple-gradient;
+    transform: translate(3px, 3px);
+  }
+  input:checked + .radio__item {
+    border: 1px solid $darkshade25;
+  }
+  .radio__item {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid $darkshade25;
+    position: absolute;
+    left: 0;
+    top: -1px;
+  }
+  &:hover .radio__item{
+    border: 1px solid $purple;
+  }
+}
