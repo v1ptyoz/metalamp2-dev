@@ -1,0 +1,40 @@
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  max-width: 260px;
+  padding-left: 50px;
+  position: relative;
+  input {
+    display: none;
+  }
+  input:checked + .toggle__item:before {
+    background: $purple-gradient;
+    transform: translate(23px, 3px);
+  }
+  input:checked + .toggle__item {
+    border: 1px solid $purple;
+  }
+  .toggle__item {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid $darkshade25;
+    position: absolute;
+    left: 0;
+    top: -1px;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $darkshade25;
+      transform: translate(3px, 3px);
+      transition: transform .3s;
+    }
+  }
+  &:hover .toggle__item{
+    border: 1px solid $purple;
+  }
+}
