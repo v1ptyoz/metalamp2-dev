@@ -1,0 +1,14 @@
+{
+    "formats": ["ttf", "svg", "woff"],
+    "fontFile": "material-icons",
+    "dest": "./src/assets/fonts",
+    "icons" : [
+        "heart",
+        "heart-outline",
+        "star",
+        "star-outline",
+        "arrow-right",
+        "chevron-down",
+        "chevron-up"
+        ]
+}
