@@ -1,7 +1,8 @@
 @import "fonts";
 @import "variables";
 @import "layout";
-@import "blocks/text-input/text-input";
-@import "blocks/checkbox/checkbox";
-@import "blocks/radio/radio";
-@import "blocks/toggle/toggle";
+@import "../blocks/text-input/text-input";
+@import "../blocks/checkbox-input/checkbox-input";
+@import "../blocks/radio-input/radio-input";
+@import "../blocks/toggle-input/toggle-input";
+@import "../blocks/favorite-input/favorite-input";
