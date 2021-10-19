@@ -1,6 +1,7 @@
 const context = __dirname + '/src';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -12,32 +13,44 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-                type: 'asset/inline',
-            },
-            {
-                test: /\.html$/,
-                loader: 'html-loader',
-            },
-            {
                 test: /\.pug$/,
+                loader: 'pug-loader',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: "pug-loader",
+                        loader: MiniCssExtractPlugin.loader
                     },
+                    {
+                        loader: "css-loader",
+                        options: { sourceMap: true }
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: { sourceMap: true }
+                    },
+                    {
+                        loader: "resolve-url-loader"
+                    },
+                    {
+                        loader: "sass-loader",
+                        options: { sourceMap: true }
+                    }
                 ],
-            },
-            {
-                test: /\.s[ac]ss$/i,
-                use: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"]
             },
             {   test: /\.js/,
                     exclude: /node_modules/,
-                    use: ['babel-loader']
+                    loader: "babel-loader"
+            },
+            {
+                test: /.(jpg|jpeg|png|svg)$/,
+                type: "asset/inline"
+            },
+            {
+                test: /\.(woff(2)?|eot|ttf|otf)$/,
+                type: "asset/inline"
             }
         ]
     },
@@ -49,9 +62,26 @@ module.exports = {
         port: 3000
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: `css/styles.min.css`
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.pug',
             minify: false,
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: "./src/assets/img",
+                    to: "assets/img",
+                    noErrorOnMissing: true
+                },
+                {
+                    from: "./src/assets/fonts",
+                    to: "assets/fonts",
+                    noErrorOnMissing: true
+                }
+            ]
         }),
     ]
 }
