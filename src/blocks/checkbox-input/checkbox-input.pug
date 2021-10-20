@@ -1,4 +1,4 @@
 mixin checkbox(caption, name)
     label.checkbox=caption
-        input(type="checkbox", name=name)
-        div.checkbox__item
+        input.visually-hidden(type="checkbox", name=name)
+        span.checkbox__item
