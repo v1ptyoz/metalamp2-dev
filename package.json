@@ -37,6 +37,7 @@
   "dependencies": {
     "@mdi/svg": "^6.3.95",
     "normalize.css": "^8.0.1",
+    "nouislider": "^15.5.0",
     "webfont": "^11.2.26"
   }
 }
