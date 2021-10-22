@@ -1,0 +1,18 @@
+mixin rate(name, checked)
+    - let n = 1;
+    div.rate
+        while n <= 5
+            if n <= checked
+                label.rate__star &#59910;
+                    if (n === checked)
+                        input.visually-hidden(type="radio" name=name value=n checked disabled)
+                    else
+                        input.visually-hidden(type="radio" name=name value=n disabled)
+            else
+                label.rate__star &#59911;
+                    if (n === checked)
+                        input.visually-hidden(type="radio" name=name value=n checked disabled)
+                    else
+                        input.visually-hidden(type="radio" name=name value=n disabled)
+            - n++
+

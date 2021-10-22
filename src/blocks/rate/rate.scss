@@ -1,0 +1,11 @@
+.rate {
+  display: inline-block;
+  .rate__star {
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Material Icon', sans-serif;
+    background: $purple-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
