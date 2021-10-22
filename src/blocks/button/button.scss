@@ -1,0 +1,38 @@
+.button {
+  cursor: pointer;
+  padding: 14px 21px 15px 19px;
+  border-radius: 22px;
+  border: none;
+  background: $purple-gradient;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.button--outline {
+  padding: 12px 19px 13px 17px;
+  color: $purple;
+  background: #FFFFFF;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: $purple-gradient;
+    border-radius: 22px;
+    z-index: -1;
+  }
+}
+.button[disabled] {
+  opacity: .5;
+  cursor: default;
+}
+.button--outline[disabled] {
+  opacity: 1;
+}
+.button--outline[disabled]:before {
+  opacity: .5;
+}

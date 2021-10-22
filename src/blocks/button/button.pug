@@ -1,0 +1,9 @@
+mixin button(caption, outline, disabled)
+    if(outline === false && disabled === false)
+        button.button(type="button")=caption
+    if(outline === true && disabled === false)
+        button.button.button--outline(type="button")=caption
+    if(outline === false && disabled === true)
+        button.button(type="button" disabled=disabled)=caption
+    if(outline === true && disabled === true)
+        button.button.button--outline(type="button" disabled=disabled)=caption
