@@ -1,0 +1,26 @@
+mixin paginator(pages, current)
+    ul.pagination
+        if (pages >= 6)
+            - let i = 1
+                while i < 4
+                    if (current === i)
+                        li.pagination__item.pagination__item--active
+                            a(href="#").pagination__link=i++
+                    else
+                        li.pagination__item
+                            a(href="#").pagination__link=i++
+                li.pagination__item.pagination__sep
+                    a(href="#").pagination__link ...
+                li.pagination__item
+                    a(href="#").pagination__link=pages
+                li.pagination__item.pagination__next
+                    a(href="#").pagination__link &#59905
+        else
+            - let i = 1
+                while i <= pages
+                    if (current === i)
+                        li.pagination__item.pagination__item--active
+                            a(href="#").pagination__link=i++
+                    else
+                        li.pagination__item
+                            a(href="#").pagination__link=i++
