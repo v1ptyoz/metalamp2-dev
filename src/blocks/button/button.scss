@@ -26,6 +26,20 @@
     z-index: -1;
   }
 }
+.button--long {
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+}
+.button--long:after {
+  font-family: 'Material Icon', sans-serif;
+  content: "\EA01";
+  font-size: 24px;
+  display: inline-block;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+}
 .button[disabled] {
   opacity: .5;
   cursor: default;
